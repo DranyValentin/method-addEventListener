@@ -9,7 +9,6 @@ EventEmitter.prototype.addEventListener = function(type, cb) {
 		if ( type in this._events )
 			this._events[type].add(cb)
 		else {
-			this._events[type] = [cb]
-			this._events[type] = new Set(this._events[type])
+			this._events[type] = new Set([cb])
 		}
 }
